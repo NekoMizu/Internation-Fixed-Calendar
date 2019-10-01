@@ -15,7 +15,12 @@ month_count = (day_of_year / 28) - (day_of_year // 28)
 
 step_two = month_count * 28
 
-day_of_month = math.ceil(step_two)
+day_of_month = round(step_two)
+
+if day_of_month == 0:
+	day_of_month = 28
+
+print(step_two)
 
 
 def month_namer(date_differential):
@@ -56,13 +61,3 @@ def month_namer(date_differential):
 month_namer(date_difference.days)
 
 print("Today is " + month + " " + str(day_of_month))
-
-
-# print(todays_date)
-# print(first_date)
-# print(date_difference)
-# print(day_of_year)
-# print(month_count)
-# print(step_two)
-# print(day_of_month)
-# print(month)
